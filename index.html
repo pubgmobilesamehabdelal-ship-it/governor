@@ -4,55 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الصفحة الشخصية | مدير الإدارة</title>
+    <!-- Tailwind CSS v4 CDN -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
-        body { font-family: 'Cairo', sans-serif; background-color: #0a0a0a; color: #e5e5e5; }
-        .gold-glow { box-shadow: 0 0 20px rgba(212, 175, 55, 0.25); }
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: #050505; 
+            color: #e5e5e5; 
+        }
+        .luxury-gradient {
+            background: linear-gradient(135deg, #050505 0%, #150c12 50%, #050505 100%);
+        }
         .gold-border { border-color: #d4af37; }
         .gold-text { color: #d4af37; }
+        .pink-border { border-color: #fbcfe8; }
+        .pink-text { color: #fbcfe8; }
+        .luxury-glow { 
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15), 0 0 30px rgba(251, 207, 232, 0.1); 
+        }
+        .img-glow {
+            box-shadow: 0 0 25px rgba(251, 207, 232, 0.35);
+        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-start p-4 bg-gradient-to-b from-[#141414] to-[#050505]">
-    <div id="toast" class="fixed top-6 left-1/2 transform -translate-x-1/2 bg-[#d4af37] text-black px-5 py-2.5 rounded-full font-bold shadow-2xl hidden z-50 text-sm">تم نسخ المعرّف بنجاح! ✅</div>
-    <div class="w-full max-w-md text-center mt-8">
-        <img src="80480.jpg" alt="مدير الإدارة" class="w-32 h-32 mx-auto rounded-full object-cover border-2 gold-border gold-glow">
-        <h1 class="text-2xl font-bold mt-4 text-white">مدير الإدارة</h1>
-        <p class="text-sm gold-text mt-1 font-medium">المملكة العربية السعودية 🇸🇦 & دولة مصر 🇪🇬</p>
-        <p class="text-gray-400 text-xs mt-3 px-6 leading-relaxed">للتواصل مع مدير إدارة المملكة العربية السعودية ودولة مصر عبر حساباته الرسمية:</p>
+<body class="min-h-screen flex flex-col items-center justify-start p-4 sm:p-6 luxury-gradient">
+
+    <!-- Toast Notification for Copying -->
+    <div id="toast" class="fixed top-6 left-1/2 transform -translate-x-1/2 bg-[#d4af37] text-black px-6 py-3 rounded-full font-bold shadow-2xl hidden z-50 text-sm border border-[#fbcfe8]">
+        تم نسخ المعرّف بنجاح! 🏆
     </div>
+
+    <!-- Header Section (Profile) -->
+    <div class="w-full max-w-md text-center mt-6">
+        <div class="relative inline-block">
+            <!-- اسم صورتك الجديد مدمج تلقائياً هنا -->
+            <img src="IMG-20260514-WA0036(14).jpg" alt="مدير الإدارة" class="w-32 h-32 mx-auto rounded-full object-cover border-2 gold-border img-glow">
+            <span class="absolute bottom-2 right-3 bg-emerald-500 w-4 h-4 rounded-full border-2 border-[#050505]"></span>
+        </div>
+        <h1 class="text-2xl font-bold mt-4 text-white tracking-wide">مدير الإدارة</h1>
+        <p class="text-xs font-bold tracking-widest mt-1 bg-gradient-to-r from-[#d4af37] via-[#fbcfe8] to-[#d4af37] bg-clip-text text-transparent">
+            المملكة العربية السعودية 🇸🇦 & دولة مصر 🇪🇬
+        </p>
+        
+        <div class="mt-4 p-4 bg-[#0f0f11]/80 rounded-2xl border border-gray-900/50 luxury-glow">
+            <p class="text-gray-300 text-xs leading-relaxed">
+                للتواصل مع مدير إدارة المملكة العربية السعودية ودولة مصر عبر حساباته الرسمية والمعرفات الخاصة:
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Action Button: WhatsApp -->
     <div class="w-full max-w-md mt-6">
-        <a href="https://wa.me/20106781577" target="_blank" class="flex items-center justify-center gap-3 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-2xl shadow-lg transition">
-            <i class="fab fa-whatsapp text-2xl"></i><span>التواصل الفوري عبر واتساب</span>
+        <a href="https://wa.me/20106781577" target="_blank" class="flex items-center justify-center gap-3 w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold py-4 px-4 rounded-2xl shadow-lg transform active:scale-95 transition duration-200 border-b-2 border-emerald-500/30">
+            <i class="fab fa-whatsapp text-2xl"></i>
+            <span class="text-sm tracking-wide">التواصل الفوري عبر واتساب</span>
         </a>
     </div>
+
+    <!-- Social Media Grid -->
     <div class="w-full max-w-md mt-6">
+        <h2 class="text-[11px] font-bold text-[#fbcfe8] uppercase tracking-wider mb-3 pr-1 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#d4af37]"></span> حسابات السوشيال ميديا
+        </h2>
         <div class="grid grid-cols-2 gap-3">
-            <a href="https://www.tiktok.com/@governorrd.devil.7.7.7?_r=1&_t=ZS-97IPd3hpvLU" target="_blank" class="flex flex-col items-center justify-center p-4 bg-[#161616] border border-gray-900 rounded-2xl hover:border-[#d4af37] transition"><i class="fab fa-tiktok text-2xl text-white mb-2"></i><span class="text-xs text-gray-300">تيك توك</span></a>
-            <a href="https://www.facebook.com/share/1KwVYiNhij/" target="_blank" class="flex flex-col items-center justify-center p-4 bg-[#161616] border border-gray-900 rounded-2xl hover:border-[#d4af37] transition"><i class="fab fa-facebook text-2xl text-blue-500 mb-2"></i><span class="text-xs text-gray-300">فيسبوك</span></a>
-            <a href="https://www.instagram.com/governorrd.devil.77?igsh=YXVqcnUzaGE1bjhi" target="_blank" class="flex flex-col items-center justify-center p-4 bg-[#161616] border border-gray-900 rounded-2xl hover:border-[#d4af37] transition"><i class="fab fa-instagram text-2xl text-pink-500 mb-2"></i><span class="text-xs text-gray-300">انستغرام</span></a>
-            <a href="https://youtube.com/@governorrd.devil.7?si=QdnqdKuFH4pv_GGX" target="_blank" class="flex flex-col items-center justify-center p-4 bg-[#161616] border border-gray-900 rounded-2xl hover:border-[#d4af37] transition"><i class="fab fa-youtube text-2xl text-red-600 mb-2"></i><span class="text-xs text-gray-300">يوتيوب</span></a>
-            <a href="https://www.threads.com/@governorrd.devil.77" target="_blank" class="flex flex-col items-center justify-center p-4 bg-[#161616] border border-gray-900 rounded-2xl hover:border-[#d4af37] transition"><i class="fa-solid fa-threads text-2xl text-white mb-2"></i><span class="text-xs text-gray-300">ثريدز</span></a>
-            <a href="https://k.kwai.com/u/@governor.devil.7/VuiWQCw0" target="_blank" class="flex flex-col items-center justify-center p-4 bg-[#161616] border border-gray-900 rounded-2xl hover:border-[#d4af37] transition"><i class="fa-solid fa-play-circle text-2xl text-orange-500 mb-2"></i><span class="text-xs text-gray-300">كواي</span></a>
+            
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@governorrd.devil.7.7.7?_r=1&_t=ZS-97IPd3hpvLU" target="_blank" class="flex flex-col items-center justify-center p-4 bg-[#0d0d0f] border border-gray-900 rounded-2xl hover:border-[#fbcfe8] active:bg-[#141417] transition duration-200 group">
+                <i class="fab fa-tiktok text-xl text-white mb-2 group-hover:scale-110 transition"></i>
+                <span class="text-xs font-medium text-gray-400 group-hover:text-[#fbcfe8]">تيك توك</span>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/share/1KwVYiNhij/" target="_blank" class="flex flex-col items-center justify-center p-4 bg-[#0d0d0f] border border-gray-900 rounded-2xl hover:border-[#d4af37] active:bg-[#141417] transition duration-200 group">
+                <i class="fab fa-facebook text-xl text-blue-500 mb-2 group-hover:scale-110 transition"></i>
+                <span class="text-xs font-medium text-gray-400 group-hover:text-[#d4af37]">فيسبوك</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/governorrd.devil.77?igsh=YXVqcnUzaGE1bjhi" target="_blank" class="flex flex-col items-center justify-center p-4 bg-[#0d0d0f] border border-gray-900 rounded-2xl hover:border-[#fbcfe8] active:bg-[#141417] transition duration-200 group">
+                <i class="fab fa-instagram text-xl text-pink-400 mb-2 group-hover:scale-110 transition"></i>
+                <span class="text-xs font-medium text-gray-400 group-hover:text-[#fbcfe8]">انستغرام</span>
+            </a>
+
+            <!-- YouTube -->
+            <a href="https://youtube.com/@governorrd.devil.7?si=QdnqdKuFH4pv_GGX" target="_blank" class="flex flex-col items-center justify-center p-4 bg-[#0d0d0f] border border-gray-900 rounded-2xl hover:border-[#d4af37] active:bg-[#141417] transition duration-200 group">
+                <i class="fab fa-youtube text-xl text-red-500 mb-2 group-hover:scale-110 transition"></i>
+                <span class="text-xs font-medium text-gray-400 group-hover:text-[#d4af37]">يوتيوب</span>
+            </a>
+
+            <!-- Threads -->
+            <a href="https://www.threads.com/@governorrd.devil.77" target="_blank" class="flex flex-col items-center justify-center p-4 bg-[#0d0d0f] border border-gray-900 rounded-2xl hover:border-[#fbcfe8] active:bg-[#141417] transition duration-200 group">
+                <i class="fa-solid fa-threads text-xl text-white mb-2 group-hover:scale-110 transition"></i>
+                <span class="text-xs font-medium text-gray-400 group-hover:text-[#fbcfe8]">ثريدز</span>
+            </a>
+
+            <!-- Kwai -->
+            <a href="https://k.kwai.com/u/@governor.devil.7/VuiWQCw0" target="_blank" class="flex flex-col items-center justify-center p-4 bg-[#0d0d0f] border border-gray-900 rounded-2xl hover:border-[#d4af37] active:bg-[#141417] transition duration-200 group">
+                <i class="fa-solid fa-play-circle text-xl text-orange-400 mb-2 group-hover:scale-110 transition"></i>
+                <span class="text-xs font-medium text-gray-400 group-hover:text-[#d4af37]">كواي</span>
+            </a>
+
         </div>
     </div>
+
+    <!-- IDs Section -->
     <div class="w-full max-w-md mt-6 mb-12">
-        <h2 class="text-xs font-bold text-gray-500 mb-3 pr-1">المعرفات الخاصة (اضغط للنسخ)</h2>
-        <div class="space-y-2">
-            <div onclick="copyText('51422398784')" class="flex items-center justify-between p-3.5 bg-[#121212] border border-gray-900 rounded-xl cursor-pointer hover:bg-[#1c1c1c] transition"><div class="flex items-center gap-3"><i class="fa-solid fa-gamepad text-[#d4af37]"></i><span class="text-xs text-gray-200">معرف ببجي (PUBG)</span></div><span class="text-xs text-gray-400 font-mono">51422398784</span></div>
-            <div onclick="copyText('governorrd.devil.777_53389')" class="flex items-center justify-between p-3.5 bg-[#121212] border border-gray-900 rounded-xl cursor-pointer hover:bg-[#1c1c1c] transition"><div class="flex items-center gap-3"><i class="fab fa-discord text-indigo-500"></i><span class="text-xs text-gray-200">ديسكورد</span></div><span class="text-xs text-gray-400 font-mono">governorrd.devil...</span></div>
-            <div onclick="copyText('S_7000_D')" class="flex items-center justify-between p-3.5 bg-[#121212] border border-gray-900 rounded-xl cursor-pointer hover:bg-[#1c1c1c] transition"><div class="flex items-center gap-3"><i class="fab fa-weixin text-green-500"></i><span class="text-xs text-gray-200">ويشات</span></div><span class="text-xs text-gray-400 font-mono">S_7000_D</span></div>
-            <div onclick="copyText('1000007')" class="flex items-center justify-between p-3.5 bg-[#121212] border border-gray-900 rounded-xl cursor-pointer hover:bg-[#1c1c1c] transition"><div class="flex items-center gap-3"><i class="fa-solid fa-id-badge text-sky-400"></i><span class="text-xs text-gray-200">معرف ماشي</span></div><span class="text-xs text-gray-400 font-mono">1000007</span></div>
+        <h2 class="text-[11px] font-bold text-[#d4af37] uppercase tracking-wider mb-3 pr-1 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#fbcfe8]"></span> المعرفات الخاصة (اضغط للنسخ)
+        </h2>
+        <div class="space-y-2.5">
+            
+            <!-- PUBG -->
+            <div onclick="copyToClipboard('51422398784')" class="flex items-center justify-between p-3.5 bg-[#0d0d0f] border border-gray-900/70 rounded-xl cursor-pointer hover:border-[#d4af37] active:bg-[#141417] transition group">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-gamepad text-[#d4af37] text-base group-hover:scale-110 transition"></i>
+                    <span class="text-xs font-medium text-gray-300">معرف ببجي (PUBG ID)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs text-[#fbcfe8] font-mono bg-[#16161a] px-2 py-1 rounded">51422398784</span>
+                    <i class="fa-regular fa-copy text-gray-600 text-xs group-hover:text-[#d4af37]"></i>
+                </div>
+            </div>
+
+            <!-- Discord -->
+            <div onclick="copyToClipboard('governorrd.devil.777_53389')" class="flex items-center justify-between p-3.5 bg-[#0d0d0f] border border-gray-900/70 rounded-xl cursor-pointer hover:border-[#fbcfe8] active:bg-[#141417] transition group">
+                <div class="flex items-center gap-3">
+                    <i class="fab fa-discord text-indigo-400 text-base group-hover:scale-110 transition"></i>
+                    <span class="text-xs font-medium text-gray-300">ديسكورد (Discord)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs text-[#d4af37] font-mono bg-[#16161a] px-2 py-1 rounded">governorrd...</span>
+                    <i class="fa-regular fa-copy text-gray-600 text-xs group-hover:text-[#fbcfe8]"></i>
+                </div>
+            </div>
+
+            <!-- WeChat -->
+            <div onclick="copyToClipboard('S_7000_D')" class="flex items-center justify-between p-3.5 bg-[#0d0d0f] border border-gray-900/70 rounded-xl cursor-pointer hover:border-[#d4af37] active:bg-[#141417] transition group">
+                <div class="flex items-center gap-3">
+                    <i class="fab fa-weixin text-green-400 text-base group-hover:scale-110 transition"></i>
+                    <span class="text-xs font-medium text-gray-300">ويشات (WeChat)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs text-[#fbcfe8] font-mono bg-[#16161a] px-2 py-1 rounded">S_7000_D</span>
+                    <i class="fa-regular fa-copy text-gray-600 text-xs group-hover:text-[#d4af37]"></i>
+                </div>
+            </div>
+
+            <!-- Mashi -->
+            <div onclick="copyToClipboard('1000007')" class="flex items-center justify-between p-3.5 bg-[#0d0d0f] border border-gray-900/70 rounded-xl cursor-pointer hover:border-[#fbcfe8] active:bg-[#141417] transition group">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-id-badge text-sky-400 text-base group-hover:scale-110 transition"></i>
+                    <span class="text-xs font-medium text-gray-300">معرف ماشي</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs text-[#d4af37] font-mono bg-[#16161a] px-2 py-1 rounded">1000007</span>
+                    <i class="fa-regular fa-copy text-gray-600 text-xs group-hover:text-[#fbcfe8]"></i>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <!-- Footer -->
+    <div class="text-center text-[10px] text-gray-600 pb-6 mt-auto tracking-widest">
+        جميع الحقوق محفوظة © 2026 | تصميم إدارة فاخر
+    </div>
+
+    <!-- JavaScript logic -->
     <script>
-        function copyText(text) {
+        function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
-                const toast = document.getElementById('toast');
-                toast.classList.remove('hidden');
-                setTimeout(() => toast.classList.add('hidden'), 2000);
+                showToast();
+            }).catch(err => {
+                const el = document.createElement('textarea');
+                el.value = text;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                showToast();
             });
+        }
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 2000);
         }
     </script>
 </body>
